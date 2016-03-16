@@ -8,20 +8,35 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController (){
+
+    void(^myBlock)(void);//该block参数为void，返回值为void
+}
+
+@property (nonatomic,copy) NSString *person;
 
 @end
 
 @implementation ViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+
+
+
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)testFunc{
+
+    self.person = @"jack";
+    myBlock = ^(void){
+
+        NSLog(@"value:%@,address=%p",self.person,self.person);
+    };
+    
+    
 }
 
 @end
