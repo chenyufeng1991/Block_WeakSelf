@@ -23,9 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
-
-
+    [self testFunc];
 }
 
 - (void)testFunc{
@@ -35,8 +33,13 @@
 
         NSLog(@"value:%@,address=%p",self.person,self.person);
     };
-    
-    
+
+    myBlock();
+}
+
+- (void)dealloc{
+
+    NSLog(@"%s",__FUNCTION__);
 }
 
 @end
